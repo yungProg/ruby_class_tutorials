@@ -1,7 +1,9 @@
 class MyCar
+  attr_accessor :color
+  attr_reader :year
   def initialize(year, color, model)
     @year = year
-    @color = color
+    self.color = color
     @model = model
     @current_speed = 0
   end
@@ -15,7 +17,7 @@ class MyCar
     @current_speed = 0
   end
   def info
-    puts "You're moving at #{@current_speed} mph"
+    puts "Your #{color} #{year} #{@model} is moving at #{@current_speed} mph."
   end
 end
 
