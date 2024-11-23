@@ -16,6 +16,9 @@ class MyCar
   def shut_down
     @current_speed = 0
   end
+  def spray_pnt(color_of_choice)
+    self.color = color_of_choice
+  end
   def info
     puts "Your #{color} #{year} #{@model} is moving at #{@current_speed} mph."
   end
@@ -29,5 +32,5 @@ toyota.brake(12)
 puts toyota.info
 toyota.shut_down
 puts toyota.info
-toyota.color = "Black"
+toyota.spray_paint("Blue")
 toyota.info
