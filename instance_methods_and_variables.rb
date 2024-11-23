@@ -29,3 +29,5 @@ toyota.brake(12)
 puts toyota.info
 toyota.shut_down
 puts toyota.info
+toyota.color = "Black"
+toyota.info
