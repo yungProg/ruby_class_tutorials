@@ -1,11 +1,14 @@
 class Vehicle
   attr_accessor :color
   attr_reader :year, :model
+
+  @@number_of_vehicles = 0
   def initialize(year, color, model)
     @year = year
     @color = color
     @model = model
     @current_speed = 0
+    @@number_of_vehicles += 1
   end
   def speed_up(number)
     @current_speed += number
@@ -22,6 +25,9 @@ class Vehicle
   def self.gas_mileage(miles, gallons)
     puts "#{miles / gallons} miles per gallon of gas"
   end
+  def self.number_of_vehicles
+    puts "#{@@number_of_vehicles} created"
+  end
 end
 class MyCar < Vehicle
   NUMBER_OF_DOORS = 4
@@ -30,7 +36,7 @@ class MyCar < Vehicle
   end
 end
 
-class MyTruck
+class MyTruck < Vehicle
   NUMBER_OF_DOORS = 2
 end
 
@@ -44,3 +50,5 @@ toyota.shut_down
 puts toyota.info
 toyota.spray_paint("Blue")
 toyota.info
+man = MyTruck.new(2024, "Black", "Man")
+Vehicle.number_of_vehicles
