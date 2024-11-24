@@ -1,3 +1,8 @@
+module Open
+  def openable
+    "I love the sky"
+  end
+end
 class Vehicle
   attr_accessor :color
   attr_reader :year, :model
@@ -30,9 +35,10 @@ class Vehicle
   end
 end
 class MyCar < Vehicle
+  include Open
   NUMBER_OF_DOORS = 4
   def info
-    puts "Your #{@color} #{year} #{@model} is moving at #{@current_speed} mph."
+    puts "Your #{@color} #{year} #{@model} is moving at #{@current_speed} mph. \n #{openable}"
   end
 end
 
