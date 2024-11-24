@@ -46,15 +46,4 @@ class MyTruck < Vehicle
   NUMBER_OF_DOORS = 2
 end
 
-toyota = MyCar.new(2023, "White", "Corolla")
-puts toyota.info
-toyota.speed_up(36)
-puts toyota.info
-toyota.brake(12)
-puts toyota.info
-toyota.shut_down
-puts toyota.info
-toyota.spray_paint("Blue")
-toyota.info
-man = MyTruck.new(2024, "Black", "Man")
-Vehicle.number_of_vehicles
+puts MyCar.ancestors
