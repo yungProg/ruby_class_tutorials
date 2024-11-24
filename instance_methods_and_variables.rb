@@ -1,9 +1,9 @@
-class MyCar
+class Vehicle
   attr_accessor :color
-  attr_reader :year
+  attr_reader :year, :model
   def initialize(year, color, model)
     @year = year
-    self.color = color
+    @color = color
     @model = model
     @current_speed = 0
   end
@@ -16,12 +16,22 @@ class MyCar
   def shut_down
     @current_speed = 0
   end
-  def spray_pnt(color_of_choice)
-    self.color = color_of_choice
+  def spray_paint(color_of_choice)
+    @color = color_of_choice
   end
+  def self.gas_mileage(miles, gallons)
+    puts "#{miles / gallons} miles per gallon of gas"
+  end
+end
+class MyCar < Vehicle
+  NUMBER_OF_DOORS = 4
   def info
-    puts "Your #{color} #{year} #{@model} is moving at #{@current_speed} mph."
+    puts "Your #{@color} #{year} #{@model} is moving at #{@current_speed} mph."
   end
+end
+
+class MyTruck
+  NUMBER_OF_DOORS = 2
 end
 
 toyota = MyCar.new(2023, "White", "Corolla")
